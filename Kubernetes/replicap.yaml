@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: apache-replica
+  name: apache-replica
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apache-replica
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: apache-replica
+    spec:
+      containers:
+      - image: aswin1015/image1:v1
+        name: image1
+        resources: {}
+status: {}
